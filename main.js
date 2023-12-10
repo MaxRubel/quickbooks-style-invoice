@@ -8,8 +8,6 @@ const renderToDom = (divId, content) => {
   selectedDiv.innerHTML = content;
 };
 
-let appContent = '';
-
 const tableHTML = `
 <div id=addRow><button id="add-row-button">Add Row</button></div>
 <form id="product-list-form">
@@ -96,6 +94,7 @@ app.addEventListener('click', (e) => {
   if (e.target.id === 'add-row-button') {
     i++;
     addRow();
+    document.getElementById('total-amount').innerHTML = '';
   }
   //DELETE ROW BUTTON
   if (e.target.id.includes('delete-button')) {
@@ -104,6 +103,7 @@ app.addEventListener('click', (e) => {
       const thisRow = document.getElementById(`product--${rowNumber}`);
       thisRow.remove();
       reformatTableIds();
+      document.getElementById('total-amount').innerHTML = '';
       i--;
     }
   }
@@ -117,7 +117,9 @@ app.addEventListener('submit', (e) => {
     const totalCost = calculateTotalAmount(productsArrayData);
     document.getElementById(
       'total-amount'
-    ).innerHTML = `Total Cost: ${totalCost}`;
+    ).innerHTML = `Total Amount: ${totalCost}`;
+    //DATA FOR FIREBASE-->
     console.log(productsArrayData);
+    console.log(totalCost);
   }
 });
