@@ -33,14 +33,18 @@ const table = document.getElementById('product-list-table');
 addRow = () => {
   const row = table.insertRow(-1);
   row.setAttribute('id', `product--${i}`, 0);
-  const th1 = row.insertCell(0);
-  const th2 = row.insertCell(1);
-  const th3 = row.insertCell(2);
-  const th4 = row.insertCell(3);
-  th1.innerHTML = `<input id="product-name--${i}" type="text" placeholder="Product" required/>`;
-  th2.innerHTML = `<input id="product-quantity--${i}" type="number" placeholder="Quantity" required/>`;
-  th3.innerHTML = `<input id="product-price--${i}" type="number" step="0.01" placeholder="Price" required/>`;
-  th4.innerHTML = `<button id="delete-button--${i}">${deleteIcon}</button>`;
+  row.insertCell(
+    0
+  ).innerHTML = `<input id="product-name--${i}" type="text" placeholder="Product" required/>`;
+  row.insertCell(
+    1
+  ).innerHTML = `<input id="product-quantity--${i}" type="number" placeholder="Quantity" required/>`;
+  row.insertCell(
+    2
+  ).innerHTML = `<input id="product-price--${i}" type="number" step="0.01" placeholder="Price" required/>`;
+  row.insertCell(
+    3
+  ).innerHTML = `<button id="delete-button--${i}">${deleteIcon}</button>`;
 };
 
 //CREATE AN ARRAY OF PRODUCT OBJECTS WHEN SUBMIT BUTTON IS PRESSED
