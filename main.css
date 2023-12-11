@@ -2,3 +2,7 @@ body {
   background-color: black;
   color: white;
 }
+
+.div-button-row {
+  display: inline-block;
+}
