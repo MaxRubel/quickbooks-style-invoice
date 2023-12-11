@@ -9,7 +9,7 @@ const renderToDom = (divId, content) => {
 };
 
 const tableHTML = `
-<div id=addRow><button id="add-row-button">Add Item</button></div>
+
 <form id="product-list-form">
 <table id="product-list-table">
   <tr id="header">
@@ -19,8 +19,12 @@ const tableHTML = `
     <th></th>
   </tr>
   </table>
-  <div id="submit-button-div"><button id="submitButton" type="submit">Submit</button></div>
+  <div class="div-button-row">
+  <button id="add-row-button" type="button">Add Item</button>
+  <button id="submitButton" type="submit">Submit</button>
+  </div>
   <div id="total-amount"></div>
+  
   <div id="products-array"></div>
   </form>
   `;
