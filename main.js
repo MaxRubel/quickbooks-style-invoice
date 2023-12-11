@@ -39,7 +39,7 @@ addRow = () => {
   const th4 = row.insertCell(3);
   th1.innerHTML = `<input id="product-name--${i}" type="text" placeholder="Product" required/>`;
   th2.innerHTML = `<input id="product-quantity--${i}" type="number" placeholder="Quantity" required/>`;
-  th3.innerHTML = `<input id="product-price--${i}" type="number" placeholder="Price" required/>`;
+  th3.innerHTML = `<input id="product-price--${i}" type="number" step="0.01" placeholder="Price" required/>`;
   th4.innerHTML = `<button id="delete-button--${i}">${deleteIcon}</button>`;
 };
 
@@ -117,7 +117,7 @@ app.addEventListener('submit', (e) => {
     const totalCost = calculateTotalAmount(productsArrayData);
     document.getElementById(
       'total-amount'
-    ).innerHTML = `Total Amount: ${totalCost}`;
+    ).innerHTML = `Total Amount: ${totalCost.toFixed(2)}`;
     //DATA FOR FIREBASE-->
     console.log(productsArrayData);
     console.log(totalCost);
