@@ -9,7 +9,7 @@ const renderToDom = (divId, content) => {
 };
 
 const tableHTML = `
-<div id=addRow><button id="add-row-button">Add Row</button></div>
+<div id=addRow><button id="add-row-button">Add Item</button></div>
 <form id="product-list-form">
 <table id="product-list-table">
   <tr id="header">
@@ -90,7 +90,7 @@ const reformatTableIds = () => {
 };
 
 app.addEventListener('click', (e) => {
-  //ADD ROW BUTTON
+  //ADD ITEM BUTTON
   if (e.target.id === 'add-row-button') {
     i++;
     addRow();
@@ -111,7 +111,7 @@ app.addEventListener('click', (e) => {
 
 app.addEventListener('submit', (e) => {
   //SUBMIT BUTTON
-  if (e.target.id === 'product-list-form') {
+  if (e.target.id === 'product-list-form' && i > 0) {
     e.preventDefault();
     const productsArrayData = productsArray();
     const totalCost = calculateTotalAmount(productsArrayData);
